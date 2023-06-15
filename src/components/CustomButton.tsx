@@ -1,9 +1,10 @@
 import React from "react";
 
-const CustomButton = ({ className, children }) => {
+const CustomButton = ({ className, children, clickHandler }) => {
   return (
     <button
-      className={`py-2.5 text-sm px-10 w-full rounded bg-primary text-white font-medium ${className}`}
+      onClick={clickHandler}
+      className={`py-2.5 text-sm px-10 rounded bg-primary text-white font-medium ${className}`}
     >
       {children}
     </button>

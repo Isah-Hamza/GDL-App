@@ -1,12 +1,18 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import person1 from "../assets/images/person1.png";
 import { CustomInput } from "../components/CustomInput";
 import CustomButton from "../components/CustomButton";
+import OTPInput from "../components/OTPInput";
+import CustomSelect from "../components/CustomSelect";
 
 const AuthPagesLayout = () => {
   const counter = [1, 2, 3];
   const steps = ["Account Information", "Enter OTP", "Personal Information"];
   const [currStep, setCurrStep] = useState(1);
+
+  useEffect(() => {
+    console.log(currStep);
+  }, [currStep]);
 
   return (
     <div className="flex w-full h-screen p-2">
@@ -65,7 +71,8 @@ const AuthPagesLayout = () => {
             </a>
           </p>
         </div>
-        <div className="mt-12 grid grid-cols-3 border rounded-md overflow-hidden">
+
+        <div className="mt-12 grid grid-cols-3 border border-primary rounded-md overflow-hidden">
           {steps.map((step, idx) => (
             <button
               key={idx}
@@ -85,42 +92,109 @@ const AuthPagesLayout = () => {
             </button>
           ))}
         </div>
-        <div className="mt-16">
-          <div className="grid grid-cols-2 gap-5">
-            <CustomInput
-              label={"First Name"}
-              placeholder={"Isah"}
-              id={"first_name"}
-            />
-            <CustomInput
-              label={"Last Name"}
-              placeholder="Hamza"
-              id={"last_name"}
-            />{" "}
-            <div className="col-span-2">
+
+        {currStep === 1 ? (
+          <div className="mt-16">
+            <div className="grid grid-cols-2 gap-5">
               <CustomInput
-                label={"Email"}
-                placeholder={"itshamzy@gmail.com"}
-                id={"email"}
+                label={"First Name"}
+                placeholder={"Isah"}
+                id={"first_name"}
+              />
+              <CustomInput
+                label={"Last Name"}
+                placeholder="Hamza"
+                id={"last_name"}
+              />{" "}
+              <div className="col-span-2">
+                <CustomInput
+                  label={"Email"}
+                  placeholder={"itshamzy@gmail.com"}
+                  id={"email"}
+                />{" "}
+              </div>
+              <CustomInput
+                label={"Password"}
+                placeholder={"********"}
+                id={"password"}
+                type={"password"}
+              />{" "}
+              <CustomInput
+                label={"Confirm password"}
+                placeholder={"********"}
+                id={"confirm_password"}
+                type={"password"}
               />{" "}
             </div>
-            <CustomInput
-              label={"Password"}
-              placeholder={"********"}
-              id={"password"}
-              type={"password"}
-            />{" "}
-            <CustomInput
-              label={"Confirm password"}
-              placeholder={"********"}
-              id={"confirm_password"}
-              type={"password"}
-            />{" "}
+            <div className=" mt-10 flex justify-end">
+              <CustomButton
+                clickHandler={() => setCurrStep(2)}
+                className={"w-fit"}
+                children={"Save and Next"}
+              />
+            </div>
           </div>
-          <div className=" mt-7 flex justify-end">
-            <CustomButton className={"w-fit"} children={"Next"} />
+        ) : null}
+
+        {currStep === 2 ? (
+          <div className="mt-14">
+            <p className="text-primary mb-4">
+              Enter The OTP sent to your registerd email/phone number <br /> to
+              move to the next step.
+            </p>
+            <OTPInput />{" "}
+            <div className=" mt-10 flex">
+              <CustomButton clickHandler={() => setCurrStep(3)} className={"w-fit"} children={"Confirm and Next"} />
+            </div>
           </div>
-        </div>
+        ) : null}
+
+        {currStep === 3 ? (
+          <div className=" mt-14">
+            <div className="grid grid-cols-2 gap-5">
+              <CustomInput
+                label={"Company Name"}
+                placeholder={"Dweller Inc."}
+                id={"company_name"}
+              />
+              <CustomInput
+                label={"CAC"}
+                placeholder="080BCUQGRXP999/NG"
+                id={"cac"}
+              />{" "}
+              <div className="col-span-2">
+                <CustomInput
+                  label={"Company Address"}
+                  placeholder={"ABC Simple Street beside XYZ Town Hall"}
+                  id={"company_address"}
+                />{" "}
+              </div>
+              <CustomSelect
+                label={"Select Country"}
+                options={[
+                  { label: "Nigeria", value: "nigeria" },
+                  { label: "USA", value: "USA" },
+                  { label: "Canada", value: "Canada" },
+                  { label: "Ukraine", value: "Ukraine" },
+                  { label: "Germany", value: "Germany" },
+                ]}
+              />{" "}
+              <CustomSelect
+                label={"Select State"}
+                options={[
+                  { label: "Abuja", value: "Abuja" },
+                  { label: "Lagos", value: "Lagos" },
+                  { label: "Ibadan", value: "Ibadan" },
+                  { label: "Akwa-Ibon", value: "Akwa-Ibon" },
+                  { label: "kaduna", value: "kaduna" },
+                ]}
+              />{" "}
+            </div>
+            <div className=" mt-7 flex justify-end">
+              <CustomButton className={"w-fit"} children={"Create Account"} />
+            </div>
+          </div>
+        ) : null}
       </section>
     </div>
   );

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { FiEye, FiEyeOff } from "react-icons/fi";
 import { SlCalender } from "react-icons/sl";
 
-export const CustomInput = ({ placeholder, label, type, id }) => {
+export const CustomInput = ({ placeholder, label, type, id, otp }) => {
   const [inputType, setInputType] = useState("password");
 
   const handleChangeType = () => {
