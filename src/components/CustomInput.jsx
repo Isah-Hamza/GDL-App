@@ -12,14 +12,15 @@ export const CustomInput = ({ placeholder, label, type, id, otp }) => {
 
   return (
     <div className="">
-      <label htmlFor={id} className="block text-sm text-primary">
+      <label htmlFor={id} className="block text-sm font-medium text-primary">
         {label}
       </label>
       <div className="relative">
         <input
+          autoComplete="off"
           placeholder={placeholder ?? ""}
           type={type == "password" ? inputType : type}
-          className="bg-white mt-1 block w-full rounded p-3 py-2.5 text-sm border border-primary outline-blue-300"
+          className="bg-white mt-1 block w-full rounded p-3 py-2.5 text-sm border outline-primary"
           id={id}
         />
         {type == "password" && (
