@@ -9,7 +9,7 @@ const Login = () => {
     <AuthPagesLayout>
       <div className="mt-5">
         <p className="font-semibold text-3xl">Login</p>
-        <p className="text-sm text-secondary-brown">
+        <p className="text-sm">
           Don't have an account yet?{" "}
           <Link to={"/register"} className="text-primary font-medium">
             Sign up
@@ -37,7 +37,7 @@ const Login = () => {
           </div>
           <div>
             <Link
-              to={"/reset-password"}
+              to={"/forgot-password"}
               className=" hover:underline font-semibold text-sm"
             >
               Forgot Password?

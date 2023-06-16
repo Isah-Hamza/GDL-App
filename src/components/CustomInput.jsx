@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { FiEye, FiEyeOff } from "react-icons/fi";
 import { SlCalender } from "react-icons/sl";
 
-export const CustomInput = ({ placeholder, label, type, id, otp }) => {
+export const CustomInput = ({ placeholder, label, type, id, ...rest }) => {
   const [inputType, setInputType] = useState("password");
 
   const handleChangeType = () => {
@@ -22,6 +22,7 @@ export const CustomInput = ({ placeholder, label, type, id, otp }) => {
           type={type == "password" ? inputType : type}
           className="bg-white mt-1 block w-full rounded p-3 py-2.5 text-sm border outline-primary"
           id={id}
+          {...rest}
         />
         {type == "password" && (
           <button

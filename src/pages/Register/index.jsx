@@ -8,7 +8,7 @@ import CustomSelect from "../../components/CustomSelect";
 import { Link } from "react-router-dom";
 
 const Register = () => {
-  const steps = ["Account Information", "Enter OTP", "Personal Information"];
+  const steps = ["Personal Information", "Enter OTP", "Business Information"];
   const [currStep, setCurrStep] = useState(1);
 
   return (
@@ -77,7 +77,7 @@ const Register = () => {
         {currStep === 2 ? (
           <div className="mt-14 otp">
             <p className="mb-4">
-              Enter The OTP sent to your registerd email/phone number <br /> to
+              Enter The OTP sent to your registered email/phone number <br /> to
               move to the next step.
             </p>
             <OTPInput />{" "}
