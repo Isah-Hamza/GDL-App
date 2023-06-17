@@ -20,7 +20,7 @@ export const CustomInput = ({ placeholder, label, type, id, ...rest }) => {
           autoComplete="off"
           placeholder={placeholder ?? ""}
           type={type == "password" ? inputType : type}
-          className="bg-white mt-1 block w-full rounded p-3 py-2.5 text-sm border outline-primary"
+          className="bg-white mt-1 block w-full rounded p-3 py-[14px] text-sm border outline-none focus:border-primary"
           id={id}
           {...rest}
         />

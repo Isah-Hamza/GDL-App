@@ -9,7 +9,7 @@ const CustomSelect = ({ options, id, label, className }) => {
       </label> */}
       <select
         required
-        className={`text-gray-600 w-full h-[45px] appearance-none px-2 py-1 rounded border outline-primary mt-1 text-sm ${className}`}
+        className={`text-gray-600 w-full h-[50px] appearance-none px-2 py-3 rounded border focus:border-primary outline-none mt-1 text-sm ${className}`}
       >
         {options.map((option, idx) => (
           <option

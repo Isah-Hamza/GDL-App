@@ -5,9 +5,10 @@ import { CustomInput } from "../../components/CustomInput";
 import CustomButton from "../../components/CustomButton";
 import OTPInput from "../../components/OTPInput";
 import CustomSelect from "../../components/CustomSelect";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Register = () => {
+  const navigate = useNavigate();
   const steps = ["Personal Information", "Enter OTP", "Business Information"];
   const [currStep, setCurrStep] = useState(1);
 
@@ -136,7 +137,11 @@ const Register = () => {
               />{" "}
             </div>
             <div className=" mt-7 flex justify-end">
-              <CustomButton className={"w-fit"} children={"Create Account"} />
+              <CustomButton
+                className={"w-fit"}
+                clickHandler={() => navigate("/login")}
+                children={"Create Account"}
+              />
             </div>
           </div>
         ) : null}

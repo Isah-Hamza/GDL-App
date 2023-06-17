@@ -6,6 +6,7 @@ export default {
       colors: {
         primary: "#760509",
         secondary: "#FF9700A6",
+        dashboard_bg: "#f5f4f9",
       },
     },
   },

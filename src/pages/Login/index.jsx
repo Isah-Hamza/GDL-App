@@ -1,10 +1,12 @@
 import React from "react";
 import AuthPagesLayout from "../../layouts/AuthPagesLayout";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { CustomInput } from "../../components/CustomInput";
 import CustomButton from "../../components/CustomButton";
 
 const Login = () => {
+  const navigate = useNavigate();
+
   return (
     <AuthPagesLayout>
       <div className="mt-5">
@@ -21,7 +23,11 @@ const Login = () => {
           Enter your credentials to proceed to your dashboard. Your security is
           our priority.
         </p>
-        <CustomInput label={"Email"} placeholder={"Enter Your Email"} id={"email"} />{" "}
+        <CustomInput
+          label={"Email"}
+          placeholder={"Enter Your Email"}
+          id={"email"}
+        />{" "}
         <CustomInput
           label={"Password"}
           placeholder={"Enter Your Password"}
@@ -30,7 +36,11 @@ const Login = () => {
         />{" "}
         <div className="flex justify-between -mt-3 text-primary">
           <div className="flex gap-1 items-center justify-center">
-            <input type="checkbox" id="remember-me" className="accent-current" />
+            <input
+              type="checkbox"
+              id="remember-me"
+              className="accent-current"
+            />
             <label htmlFor="remember-me" className="mb-0 text-xs font-semibold">
               Remember me
             </label>
@@ -46,7 +56,7 @@ const Login = () => {
         </div>
         <div className=" mt-5 flex justify-end">
           <CustomButton
-            clickHandler={() => setCurrStep(2)}
+            clickHandler={() => navigate("/dashboard")}
             className={"w-fit"}
             children={"Login"}
           />
