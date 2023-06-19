@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { BiCaretDown } from "react-icons/bi";
 
-const CustomSelect = ({ options, id, label, className }) => {
+const CustomSelect = ({ options, allowFirstOption, className }) => {
   return (
     <div className="relative w-full">
       {/* <label htmlFor={id} className="block text-sm">
@@ -14,7 +14,7 @@ const CustomSelect = ({ options, id, label, className }) => {
         {options.map((option, idx) => (
           <option
             selected={idx === 0}
-            disabled={idx === 0}
+            disabled={!allowFirstOption && idx === 0}
             // className={idx === 0 && ""}
             key={idx}
             value={option.value}
@@ -23,7 +23,7 @@ const CustomSelect = ({ options, id, label, className }) => {
           </option>
         ))}
       </select>
-      <BiCaretDown className="absolute top-1/2 -translate-y-1/2 right-3" />
+      <BiCaretDown className="absolute top-1/2 -translate-y-1/2 right-3 pointer-events-none" />
     </div>
   );
 };

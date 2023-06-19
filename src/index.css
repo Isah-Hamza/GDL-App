@@ -25,24 +25,24 @@ input:-webkit-autofill:active {
   -webkit-box-shadow: 0 0 0 30px white inset !important;
 }
 
-.recent-transactions tbody tr td {
+tbody tr td {
   padding-top: 14px;
   padding-bottom: 14px;
   border-bottom: 1px solid gainsboro;
   /* font-weight: 500; */
 }
 
-.recent-transactions tbody tr td .pending {
+tbody tr td .pending {
   color: hsl(47, 65%, 71%);
   font-weight: 500;
 }
 
-.recent-transactions tbody tr td .completed {
+tbody tr td .completed {
   color: hsl(133, 32%, 57%);
   font-weight: 500;
 }
 
-.recent-transactions tbody tr td .canceled {
+tbody tr td .canceled {
   color: hsl(9, 4%, 66%);
   font-weight: 500;
 }

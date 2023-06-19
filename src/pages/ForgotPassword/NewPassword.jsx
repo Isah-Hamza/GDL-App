@@ -1,7 +1,7 @@
 import React from "react";
 import AuthPagesLayout from "../../layouts/AuthPagesLayout";
-import { CustomInput } from "../../components/CustomInput";
-import CustomButton from "../../components/CustomButton";
+import { CustomInput } from "../../components/Inputs/CustomInput";
+import CustomButton from "../../components/Buttons/CustomButton";
 import { Link } from "react-router-dom";
 
 const NewPassword = () => {

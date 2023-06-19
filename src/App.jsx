@@ -6,6 +6,7 @@ import Login from "./pages/Login";
 import ForgotPassword from "./pages/ForgotPassword";
 import NewPassword from "./pages/ForgotPassword/NewPassword";
 import Home from "./pages/Dashboard/Home";
+import Fleets from "./pages/Dashboard/Fleets";
 
 function App() {
   
@@ -16,6 +17,7 @@ function App() {
     { path: "/forgot-password", Component: ForgotPassword },
     { path: "/new-password", Component: NewPassword },
     { path: "/dashboard", Component: Home },
+    { path: "/fleets", Component: Fleets },
   ];
 
   return (

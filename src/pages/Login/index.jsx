@@ -1,8 +1,8 @@
 import React from "react";
 import AuthPagesLayout from "../../layouts/AuthPagesLayout";
 import { Link, useNavigate } from "react-router-dom";
-import { CustomInput } from "../../components/CustomInput";
-import CustomButton from "../../components/CustomButton";
+import { CustomInput } from "../../components/Inputs/CustomInput";
+import CustomButton from "../../components/Buttons/CustomButton";
 
 const Login = () => {
   const navigate = useNavigate();

@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import AuthPagesLayout from "../../layouts/AuthPagesLayout";
 
-import { CustomInput } from "../../components/CustomInput";
-import CustomButton from "../../components/CustomButton";
-import OTPInput from "../../components/OTPInput";
-import CustomSelect from "../../components/CustomSelect";
+import { CustomInput } from "../../components/Inputs/CustomInput";
+import CustomButton from "../../components/Buttons/CustomButton";
+import OTPInput from "../../components/Inputs/OTPInput";
+import CustomSelect from "../../components/Inputs/CustomSelect";
 import { Link, useNavigate } from "react-router-dom";
 
 const Register = () => {

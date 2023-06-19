@@ -1,8 +1,8 @@
 import React from "react";
-import CustomButton from "../../components/CustomButton";
+import CustomButton from "../../components/Buttons/CustomButton";
 import { Link, useNavigate } from "react-router-dom";
 import AuthPagesLayout from "../../layouts/AuthPagesLayout";
-import { CustomInput } from "../../components/CustomInput";
+import { CustomInput } from "../../components/Inputs/CustomInput";
 
 const ForgotPassword = () => {
   const navigate = useNavigate();
