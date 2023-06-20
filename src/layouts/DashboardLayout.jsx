@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { AiTwotoneHome } from "react-icons/ai";
 import { BiMessageAltCheck } from "react-icons/bi";
 import { FaBell, FaCogs, FaUsers } from "react-icons/fa";
@@ -6,43 +6,64 @@ import { RiCarFill, RiMoneyDollarBoxFill, RiServerFill } from "react-icons/ri";
 import { Link } from "react-router-dom";
 
 const DashboardLayout = ({ children }) => {
+  const [activeLink, setActiveLink] = useState(() => {
+    const url = window.location.pathname.split("/")[1];
+    return url;
+  });
+
+  useEffect(() => {
+    console.log(activeLink);
+  }, []);
+
   const primarySideBarItems = [
     {
-      title: "Home",
+      title: "Dashboard",
+      id: "dashboard",
+      url: "/dashboard",
       icon: <AiTwotoneHome size={17} />,
     },
     {
-      title: "Transactions",
+      title: "My Fleets",
+      id: "fleets",
+      url: "/fleets",
+      icon: <RiCarFill size={17} />,
+    },
+    {
+      title: "Drivers",
+      id: "drivers",
+      url: "/drivers",
+      icon: <FaUsers size={17} />,
+    },
+    {
+      title: "Orders",
+      id: "orders",
+      url: "/orders",
       icon: <RiMoneyDollarBoxFill size={17} />,
     },
     {
       title: "Notificaions",
+      id: "notificaions",
+      url: "/notification",
       icon: <FaBell size={17} />,
     },
     {
-      title: "Vehicles",
-      icon: <RiCarFill size={17} />,
-    },
-    {
-      title: "Employees",
-      icon: <FaUsers size={17} />,
-    },
-    {
-      title: "Policies",
-      icon: <RiServerFill size={17} />,
-    },
-    {
-      title: "Statements",
+      title: "Expenses",
+      id: "expenses",
+      url: "/expenses",
       icon: <BiMessageAltCheck size={18} />,
     },
-    {
-      title: "Account Settings",
-      icon: <FaCogs size={17} />,
-    },
+    // {
+    //   title: "Policies",
+    //   icon: <RiServerFill size={17} />,
+    // },
+    // {
+    //   title: "Account Settings",
+    //   icon: <FaCogs size={17} />,
+    // },
   ];
 
   const secondarySideBarItems = [
-    "How to use Cards",
+    // "How to use Cards",
     "Terms and Conditions",
     "Help Center",
     "Logout",
@@ -56,9 +77,11 @@ const DashboardLayout = ({ children }) => {
           <ul>
             {primarySideBarItems.map((item, idx) => (
               <Link
-                to={"#"}
+                to={item.url}
                 key={idx}
-                className={`text-sm mb-1 px-7 py-2 flex gap-2.5 items-center hover:font-semibold hover:bg-slate-200 ${"hover:text-primary"}`}
+                className={`text-sm mb-1 px-7 py-2 flex gap-2.5 items-center hover:font-semibold hover:bg-slate-200 hover:text-primary  ${
+                  activeLink.includes(item.id) && "!text-primary font-bold hover:font-bold"
+                }  `}
               >
                 {item.icon}
                 <span>{item.title}</span>
