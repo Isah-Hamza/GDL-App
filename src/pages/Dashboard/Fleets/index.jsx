@@ -9,11 +9,13 @@ import {} from "react-icons";
 import CustomSelect from "../../../components/Inputs/CustomSelect";
 import CustomButton from "../../../components/Buttons/CustomButton";
 import { BiPlus } from "react-icons/bi";
-import { FiPlus } from "react-icons/fi";
+import { FiEye, FiPlus } from "react-icons/fi";
 import { CustomInput } from "../../../components/Inputs/CustomInput";
+import { useNavigate } from "react-router-dom";
 
 const Fleets = () => {
   const [addNew, setAddNew] = useState(false);
+  const navigate = useNavigate()
 
   const fleet_summary = [
     { title: "Total", value: 156 },
@@ -66,6 +68,7 @@ const Fleets = () => {
     "Department",
     "Amount",
     "Status",
+    "",
   ];
 
   const type_options = [
@@ -106,7 +109,7 @@ const Fleets = () => {
         <div className="grid grid-cols-4 gap-5">
           {fleet_summary.map((item, idx) => (
             <div
-              className="text-center grid place-content-center bg-white/90 rounded p-5 h-28"
+              className="text-center grid place-content-center bg-white/90 rounded p-5 h-32"
               key={idx}
             >
               <p className="text-lg font-semibold"> {item.value}</p>
@@ -120,7 +123,7 @@ const Fleets = () => {
               <span>Filter By:</span>
               <div>
                 <CustomSelect
-                  className={"h-10 !py-0 !w-40 !bg-blue-300]"}
+                  className={"!h-[45px] !py-0 !w-40 !bg-blue-300]"}
                   options={filter}
                   allowFirstOption
                 />
@@ -128,10 +131,10 @@ const Fleets = () => {
             </div>
             <CustomButton
               clickHandler={() => setAddNew(true)}
-              className={"!py-3"}
+              className={"!py-3 !px-7"}
               children={
-                <div className="flex items-center gap-1">
-                  <BiPlus size={24} color="#fff" className="text-white" />
+                <div className="flex items-center gap-1 !text-sm">
+                  <BiPlus size={20} color="#fff" className="text-white" />
                   <span>Add New</span>
                 </div>
               }
@@ -165,6 +168,14 @@ const Fleets = () => {
                     <td>
                       <span className={`${trnx.status}`}>{trnx.status}</span>
                     </td>
+                    <td>
+                      <button
+                        onClick={() => navigate("/fleets/track-fleet")}
+                        className="flex items-center gap-1"
+                      >
+                        <FiEye /> View
+                      </button>
+                    </td>
                   </tr>
                 ))}
               </tbody>
@@ -174,16 +185,16 @@ const Fleets = () => {
       </div>
       {addNew ? (
         <div className="fixed inset-0 bg-black/60 overflow-hidden flex justify-end">
-          <div className="h-screen bg-white w-[450px] p-7">
+          <div className="h-screen bg-white w-[450px] p-7 py-5">
             <div className="flex justify-between items-center">
-              <p className="text-lg font-semibold text-primary ">
+              <p className="text-lg font-semibold text-primary capitalize ">
                 Add new fleet
               </p>
               <button onClick={() => setAddNew(false)}>
                 <FiPlus className="rotate-45" size={22} />
               </button>
             </div>
-            <div className="grid grid-cols-2 gap-5 mt-5">
+            <div className="grid grid-cols-2 gap-5 mt-7">
               <CustomInput placeholder={"Name"} id={"name"} />
               <CustomSelect options={type_options} />
               <CustomSelect options={color_options} />
@@ -198,14 +209,16 @@ const Fleets = () => {
                   <div className="text-center text-sm border-2 border-dashed w-full h-52 grid place-content-center">
                     <button
                       type="button"
-                      className="text-appcolor px-5 py-2 rounded-md"
+                      className="text-primary px-5 py-2 rounded-md font-medium"
                     >
                       + Select File
                     </button>
-                    <p className="text-xs">or drag and drop folder here.</p>
+                    <p className="text-sm -mt-2.5">
+                      or drag and drop fleet image here.
+                    </p>
                   </div>
                 </div>
-                <CustomButton className="w-full bg-appcolor ml-auto mt-7 text-white text-sm flex items-center justify-center gap-2 px-5 py-2 rounded-md">
+                <CustomButton className="w-full ml-auto mt-7 text-white text-sm flex items-center justify-center gap-2 px-5 py-2 rounded-md">
                   <BsCloudArrowUp size={20} /> Upload Fleet
                 </CustomButton>
               </div>

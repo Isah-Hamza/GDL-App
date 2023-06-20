@@ -78,7 +78,7 @@ const DashboardLayout = ({ children }) => {
           </ul>
         </div>
       </section>
-      <section className="px-10 pb-10 h-screen overflow-auto flex-1 right py-3 pt-4">
+      <section className="px-10 pb-10 h-screen overflow-auto flex flex-col flex-1 right py-3 pt-4">
         {children}
       </section>
     </div>

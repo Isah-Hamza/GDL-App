@@ -7,6 +7,7 @@ import ForgotPassword from "./pages/ForgotPassword";
 import NewPassword from "./pages/ForgotPassword/NewPassword";
 import Home from "./pages/Dashboard/Home";
 import Fleets from "./pages/Dashboard/Fleets";
+import Tracker from "./pages/Dashboard/Fleets/Tracker";
 
 function App() {
   
@@ -18,6 +19,7 @@ function App() {
     { path: "/new-password", Component: NewPassword },
     { path: "/dashboard", Component: Home },
     { path: "/fleets", Component: Fleets },
+    { path: "/fleets/track-fleet", Component: Tracker },
   ];
 
   return (
