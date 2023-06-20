@@ -13,21 +13,21 @@ import { FiEye, FiPlus } from "react-icons/fi";
 import { CustomInput } from "../../../components/Inputs/CustomInput";
 import { useNavigate } from "react-router-dom";
 
-const Fleets = () => {
+const Drivers = () => {
   const [addNew, setAddNew] = useState(false);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const fleet_summary = [
-    { title: "Total", value: 156 },
-    { title: "Active", value: 98 },
-    { title: "Maintained", value: 12 },
-    { title: "Brokedown", value: "02" },
+    { title: "Total", value: 282 },
+    { title: "Available", value: 190 },
+    { title: "Unavailable", value: 43 },
+    { title: "Suspended", value: 17 },
   ];
   const filter = [
     { label: "No Filter", value: 1 },
-    { label: "Active", value: 2 },
-    { label: "Maintained", value: 3 },
-    { label: "Brokedown", value: 4 },
+    { label: "Available", value: 2 },
+    { label: "Unavailable", value: 3 },
+    { label: "Suspended", value: 4 },
   ];
 
   const recentTransactions = [
@@ -71,19 +71,22 @@ const Fleets = () => {
     "",
   ];
 
-  const type_options = [
-    { label: "Select Type", value: null },
-    { label: "Automatic", value: 1 },
-    { label: "Manual", value: 2 },
+  const fleet_assigned = [
+    { label: "Assign Fleet", value: null },
+    { label: "Mercedes", value: 1 },
+    { label: "Hnda Accord", value: 2 },
+    { label: "RAV4 Jeep", value: 2 },
+    { label: "Toyota Corrolla", value: 2 },
+    { label: "Landcruiser Jeep", value: 2 },
   ];
 
-  const color_options = [
-    { label: "Select Color", value: null },
-    { label: "White", value: 1 },
-    { label: "Blue", value: 2 },
-    { label: "Green", value: 3 },
-    { label: "Red", value: 4 },
-    { label: "Purple", value: 5 },
+  const experience_level = [
+    { label: "Experience Level", value: null },
+    { label: "Below 2 Years", value: 1 },
+    { label: "2-5 Years", value: 3 },
+    { label: "6-10 Years", value: 4 },
+    { label: "11-20 Years", value: 5 },
+    { label: "20 and Above", value: 5 },
   ];
 
   const bike_status_options = [
@@ -96,12 +99,12 @@ const Fleets = () => {
   return (
     <DashboardLayout>
       <div className=" flex items-center justify-between">
-        <p className="text-lg font-semibold text-primary ">My Fleets</p>
+        <p className="text-lg font-semibold text-primary ">GHL Drivers</p>
         <div className="flex items-center gap-1">
           <RiCarFill className="text-primary" size={16} />
           <p className="text-sm">
-            New fleets this month{" - "}
-            <span className="font-semibold text-primary">42 units</span>
+            Recruited this month{" - "}
+            <span className="font-semibold text-primary">42 drivers</span>
           </p>
         </div>
       </div>
@@ -113,7 +116,7 @@ const Fleets = () => {
               key={idx}
             >
               <p className="text-lg font-semibold"> {item.value}</p>
-              <p className="text-sm ">{item.title} Fleets </p>
+              <p className="text-sm ">{item.title} Drivers </p>
             </div>
           ))}
         </div>
@@ -170,7 +173,7 @@ const Fleets = () => {
                     </td>
                     <td>
                       <button
-                        onClick={() => navigate("/fleets/track-fleet")}
+                        onClick={() => navigate("/drivers/details")}
                         className="flex items-center gap-1"
                       >
                         <FiEye /> View
@@ -188,23 +191,23 @@ const Fleets = () => {
           <div className="h-screen bg-white w-[450px] p-7 py-5">
             <div className="flex justify-between items-center">
               <p className="text-lg font-semibold text-primary capitalize ">
-                Add new fleet
+                Add new driver
               </p>
               <button onClick={() => setAddNew(false)}>
                 <FiPlus className="rotate-45" size={22} />
               </button>
             </div>
             <div className="grid grid-cols-2 gap-5 mt-7">
-              <CustomInput placeholder={"Name"} id={"name"} />
-              <CustomSelect options={type_options} />
-              <CustomSelect options={color_options} />
+              <CustomInput placeholder={"Driver Name"} id={"name"} />
+              <CustomSelect options={fleet_assigned} />
+              <CustomSelect options={experience_level} />
               <CustomInput placeholder={"Regisration Number"} id={"reg_no"} />
               <CustomInput placeholder={"Model"} id={"model"} />
               <CustomSelect options={bike_status_options} />
               <div className="col-span-2">
                 <div className="w-full">
                   <p className="text-sm font-semibold mb-2">
-                    Upload Fleet Image Here...
+                    Upload Driver's Documents Here...
                   </p>
                   <div className="text-center text-sm border-2 border-dashed w-full h-52 grid place-content-center">
                     <button
@@ -214,12 +217,12 @@ const Fleets = () => {
                       + Select File
                     </button>
                     <p className="text-sm -mt-2.5">
-                      or drag and drop fleet image here.
+                      or drag and drop image files here.
                     </p>
                   </div>
                 </div>
                 <CustomButton className="w-full ml-auto mt-7 text-white text-sm flex items-center justify-center gap-2 px-5 py-2 rounded-md">
-                  <BsCloudArrowUp size={20} /> Upload Fleet
+                  <BsCloudArrowUp size={20} /> Save
                 </CustomButton>
               </div>
             </div>
@@ -230,4 +233,4 @@ const Fleets = () => {
   );
 };
 
-export default Fleets;
+export default Drivers;

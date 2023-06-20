@@ -1,10 +1,9 @@
 import React from "react";
-import { RiCarFill, RiFlag2Fill } from "react-icons/ri";
+import { RiCarFill } from "react-icons/ri";
 import DashboardLayout from "../../../layouts/DashboardLayout";
 
 import hamza from "../../../assets/images/hamza_picture.jpg";
-import { GrFlag, GrFlagFill, GrLocation } from "react-icons/gr";
-import { SlCallEnd, SlCallOut, SlFlag } from "react-icons/sl";
+import { GrLocation } from "react-icons/gr";
 import { BsFlagFill, BsPersonCircle } from "react-icons/bs";
 import { BiMobile, BiPhoneCall } from "react-icons/bi";
 

@@ -8,6 +8,9 @@ import NewPassword from "./pages/ForgotPassword/NewPassword";
 import Home from "./pages/Dashboard/Home";
 import Fleets from "./pages/Dashboard/Fleets";
 import Tracker from "./pages/Dashboard/Fleets/Tracker";
+import Drivers from "./pages/Dashboard/Drivers";
+import DriverDetails from "./pages/Dashboard/Drivers/DriverDetails";
+import Orders from "./pages/Dashboard/Orders";
 
 function App() {
   
@@ -19,6 +22,9 @@ function App() {
     { path: "/new-password", Component: NewPassword },
     { path: "/dashboard", Component: Home },
     { path: "/fleets", Component: Fleets },
+    { path: "/drivers", Component: Drivers },
+    { path: "/orders", Component: Orders },
+    { path: "/drivers/details", Component: DriverDetails },
     { path: "/fleets/track-fleet", Component: Tracker },
   ];
 
