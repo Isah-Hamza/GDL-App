@@ -80,7 +80,7 @@ const DashboardLayout = ({ children }) => {
                 to={item.url}
                 key={idx}
                 className={`text-sm mb-1 px-7 py-2 flex gap-2.5 items-center hover:font-semibold hover:bg-slate-200 hover:text-primary  ${
-                  activeLink.includes(item.id) && "!text-primary font-bold hover:font-bold"
+                  activeLink.includes(item.id) && "!text-primary font-bold hover:!font-bold"
                 }  `}
               >
                 {item.icon}

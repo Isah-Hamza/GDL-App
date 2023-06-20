@@ -22,7 +22,7 @@ const Tracker = () => {
         "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo, veritatis.",
       time: "06:00PM",
       date: "Today",
-      icon: <BsFlagFill color="#fff" size={12} />,
+      icon: <BsFlagFill color="#fff" size={11} />,
     },
   ];
 
