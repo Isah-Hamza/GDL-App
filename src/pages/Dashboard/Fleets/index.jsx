@@ -171,9 +171,9 @@ const Fleets = () => {
                     <td>
                       <button
                         onClick={() => navigate("/fleets/track-fleet")}
-                        className="flex items-center gap-1"
+                        className="hover:text-primary flex items-center gap-1"
                       >
-                        <FiEye /> View
+                        <FiEye  className="text-current"/> View
                       </button>
                     </td>
                   </tr>

@@ -47,17 +47,17 @@ const MyAreaChart = ({ height }) => {
           <linearGradient id="gradient" x1="0" y1="0" x2="0" y2="1">
             <stop
               offset={gradientOffset()}
-              stopColor="#8884d8"
+              stopColor="#760509"
               stopOpacity={0.8}
             />
             <stop
               offset={gradientOffset()}
-              stopColor="#8884d8"
+              stopColor="#760509"
               stopOpacity={0}
             />
           </linearGradient>
         </defs>
-        <Area type="monotone" dataKey="value" stroke="#8884d8" fill="#EBF5FF" />
+        <Area type="monotone" dataKey="value" stroke="#760509" fill="hsla(358, 92%, 24%,60%)" />
       </AreaChart>
     </ResponsiveContainer>
   );

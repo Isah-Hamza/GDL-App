@@ -20,6 +20,7 @@ import { BiMessageAltCheck, BiSearch, BiSearchAlt } from "react-icons/bi";
 import MyAreaChart from "../../../components/Charts/AreaChart";
 import DashboardLayout from "../../../layouts/DashboardLayout";
 import MyTable from "../../../components/Tables/MyTable";
+import { FiEye } from "react-icons/fi";
 
 const Home = () => {
   const balances = [
@@ -67,10 +68,10 @@ const Home = () => {
 
   const recentTransactionTableHeader = [
     "Date",
-    "Merchant",
-    "Category",
-    "Person",
-    "Department",
+    "Source",
+    "Destination",
+    "Driver",
+    "Fleet Used",
     "Amount",
     "Status",
   ];
@@ -130,24 +131,24 @@ const Home = () => {
         </div>
         <div className="grid grid-cols-3 gap-5 mt-5">
           <div className="py-4 bg-white/90 rounded">
-            <p className="px-4 font-medium">Weekly Company Fuel Spent</p>
+            <p className="px-4 font-medium">Trips Summary Today</p>
             <div className="text-sm ">
               <div className="px-4 mt-5 flex justify-between items-center">
-                <p>Last 7 Days</p>
-                <p className="font-semibold text-primary">NGN145,000</p>
+                <p>Completed</p>
+                <p className="font-semibold text-primary">145</p>
               </div>
               <div className="px-4 mt-5 flex justify-between items-center">
-                <p>Last Month</p>
-                <p className="font-semibold text-primary">NGN605,900</p>
+                <p>Canceled</p>
+                <p className="font-semibold text-primary">29</p>
               </div>
               <div className="px-4 mt-5 pt-3 flex justify-between items-center border-t">
-                <p>Aug. Forecast</p>
-                <p className="font-semibold text-primary">NGN1,005,000</p>
+                <p>Total Trips</p>
+                <p className="font-semibold text-primary">174</p>
               </div>
             </div>
           </div>{" "}
           <div className="flex flex-col p-4 bg-white/90 rounded">
-            <p className="font-medium">Monthly Fuel Budget</p>
+            <p className="font-medium">Organizational Summary</p>
             <div className="flex flex-col flex-1">
               <div className="mt-5 flex gap-3 items-center text-sm">
                 <p>This Month</p>
@@ -222,6 +223,14 @@ const Home = () => {
                     <td>{trnx.amount}</td>
                     <td>
                       <span className={`${trnx.status}`}>{trnx.status}</span>
+                    </td>
+                    <td>
+                      <button
+                        onClick={() => navigate("#")}
+                        className="hover:text-primary flex items-center gap-1"
+                      >
+                        <FiEye className="text-current" /> View
+                      </button>
                     </td>
                   </tr>
                 ))}
