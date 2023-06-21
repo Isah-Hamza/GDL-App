@@ -42,7 +42,7 @@ const Home = () => {
       merchant: "Uber",
       category: "Fuel",
       person: "Isah Hamza",
-      department: "Services",
+      department: "G-Wagon",
       amount: "$12,000",
       status: "pending",
     },
@@ -51,7 +51,7 @@ const Home = () => {
       merchant: "WhoGoHost",
       category: "Resource",
       person: "John Nemesis",
-      department: "Spare Parts",
+      department: "Landcruiser",
       amount: "$2,000",
       status: "canceled",
     },
@@ -60,7 +60,7 @@ const Home = () => {
       merchant: "Ali Express",
       category: "Revenue",
       person: "Gbenga Moses",
-      department: "Repairs",
+      department: "Bughatti",
       amount: "$25,000",
       status: "completed",
     },
@@ -74,6 +74,7 @@ const Home = () => {
     "Fleet Used",
     "Amount",
     "Status",
+    ''
   ];
 
   return (
