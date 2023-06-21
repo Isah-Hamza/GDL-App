@@ -250,13 +250,13 @@ const DriverDetails = () => {
               </div>
               <p className="ml-auto  font-semibold text-base">$12,000</p>
             </div>
-            <div className="mt-4 flex gap-3 items-center text-sm">
+            {/* <div className="mt-4 flex gap-3 items-center text-sm">
               <p>This Year</p>
               <div className="w-32 h-2.5 bg-gray-100 rounded-lg">
-                <div className="rounded-lg bg-primary h-full w-3/12"></div>
+                <div className="rounded-lg bg-primary h-full "></div>
               </div>
               <p className="ml-auto  font-semibold text-base">$257,000</p>
-            </div>
+            </div> */}
             <button className="hover:underline hover:font-medium transition-all ease-in-out duration-75 mt-auto flex items-center gap-3 text-xs justify-center">
               View Full Report <FaLongArrowAltRight className="text-primary" />{" "}
             </button>

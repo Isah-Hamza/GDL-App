@@ -236,24 +236,24 @@ const DriverDetails = () => {
         <div className="flex flex-col p-4 bg-white/90 rounded">
           <p className="font-medium">Monthly Returns to GHL</p>
           <div className="flex flex-col flex-1">
-            <div className="mt-4 flex gap-3 items-center text-sm">
+            <div className="mt-[14px] flex gap-3 items-center text-sm">
               <p>This Month</p>
               <div className="w-32 h-2.5 bg-gray-100 rounded-lg">
                 <div className="rounded-lg bg-primary h-full w-3/5"></div>
               </div>
               <p className="ml-auto  font-semibold text-base">$36,300</p>
             </div>
-            <div className="mt-4 flex gap-3 items-center text-sm">
+            <div className="mt-[14px] flex gap-3 items-center text-sm">
               <p>Last Month</p>
               <div className="w-32 h-2.5 bg-gray-100 rounded-lg">
                 <div className="rounded-lg bg-primary h-full w-3/12"></div>
               </div>
               <p className="ml-auto  font-semibold text-base">$12,000</p>
             </div>
-            <div className="mt-4 flex gap-3 items-center text-sm">
+            <div className="mt-[14px] flex gap-3 items-center text-sm">
               <p>This Year</p>
               <div className="w-32 h-2.5 bg-gray-100 rounded-lg">
-                <div className="rounded-lg bg-primary h-full w-3/12"></div>
+                <div className="rounded-lg bg-primary h-full w-10/12"></div>
               </div>
               <p className="ml-auto  font-semibold text-base">$257,000</p>
             </div>
