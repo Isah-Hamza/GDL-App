@@ -12,15 +12,15 @@ const data = [
   { name: "Jan", value: 50 },
   { name: "Feb", value: 60 },
   { name: "Mar", value: 70 },
-  { name: "Apr", value: 80 },
+  { name: "Apr", value: 65 },
   { name: "May", value: 70 },
   { name: "Jun", value: 60 },
-  { name: "Jul", value: 50 },
+  { name: "Jul", value: 60 },
   { name: "Aug", value: 70 },
   { name: "Sep", value: 80 },
-  { name: "Oct", value: 60 },
-  { name: "Nov", value: 90 },
-  { name: "Dec", value: 100 },
+  { name: "Oct", value: 80 },
+  { name: "Nov", value: 70 },
+  { name: "Dec", value: 60 },
 ];
 
 const gradientOffset = () => {
@@ -37,13 +37,17 @@ const gradientOffset = () => {
 
 const MyAreaChart = ({ height }) => {
   return (
-    <ResponsiveContainer width="100%" height={height || 300} className={'-translate-x-5'}>
+    <ResponsiveContainer
+      width="104%"
+      height={height || 300}
+      className={"-ml-7"}
+    >
       <AreaChart data={data}>
-        <CartesianGrid strokeDasharray="3 3" />
+        {/* <CartesianGrid strokeDasharray="3 3" /> */}
         <XAxis dataKey="name" tick={{ fontSize: 10 }} />
-        <YAxis  interval={1} tick={{ fontSize: 10 }} />
+        <YAxis interval={1} tick={{ fontSize: 10 }} />
         <Tooltip />
-        <defs>
+        {/* <defs>
           <linearGradient id="gradient" x1="0" y1="0" x2="0" y2="1">
             <stop
               offset={gradientOffset()}
@@ -56,8 +60,19 @@ const MyAreaChart = ({ height }) => {
               stopOpacity={0}
             />
           </linearGradient>
+        </defs> */}
+        <defs>
+          <linearGradient id="gradient" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stopColor="rgba(118, 5, 9,.01)" />
+            <stop offset="90%" stopColor="#fcf7fd" />
+          </linearGradient>
         </defs>
-        <Area type="monotone" dataKey="value" stroke="#760509" fill="hsla(358, 92%, 24%,60%)" />
+        <Area
+          type="monotone"
+          dataKey="value"
+          stroke="rgba(118, 5, 9,.2)"
+          fill="url(#gradient)"
+        />
       </AreaChart>
     </ResponsiveContainer>
   );
